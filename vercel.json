@@ -2,7 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "server/dist/server.js",
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/dist"
+      }
+    },
+    {
+      "src": "server/package.json",
       "use": "@vercel/node"
     }
   ],
@@ -11,8 +18,5 @@
       "src": "/(.*)",
       "dest": "server/dist/server.js"
     }
-  ],
-  "env": {
-    "NODE_VERSION": "18.x"
-  }
+  ]
 }
