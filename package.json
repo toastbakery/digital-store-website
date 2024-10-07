@@ -1,0 +1,14 @@
+{
+  "name": "digital-store",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "server"
+  ],
+  "scripts": {
+    "build": "cd frontend && npm run build && cd ../server && npm run build",
+    "start": "cd server && npm run start",
+    "dev": "cd server && npm run dev"
+  }
+}
