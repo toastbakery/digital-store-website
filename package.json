@@ -7,8 +7,15 @@
     "server"
   ],
   "scripts": {
-    "build": "cd frontend && npm run build && cd ../server && npm run build",
-    "start": "cd server && npm run start",
-    "dev": "cd server && npm run dev"
+    "build": "npm run build:frontend && npm run build:server",
+    "build:frontend": "cd frontend && npm run build",
+    "build:server": "cd server && npm run build",
+    "dev": "npm run dev:server",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:server": "cd server && npm run dev"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "concurrently": "^6.2.1"
   }
 }
